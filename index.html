@@ -7,25 +7,30 @@
 <body>
 	<div id="wrapper">
 		<h1>CPR</h1>
-		<div id="left">
-			<span>CPR Cycles</span><input type="text" disabled="" /><br />
+       <div id="clock">
+          <div id="x"></div>
+          <div id="y"></div>
+          <div id="z"></div>
+        </div>
+		<div id='status' class="left">
+			<span>Reanimation Cycles</span><input type="text" disabled="" /><br />
 			<span>Shock</span><input type="text" disabled /><br />
-			<span>Amiodarone Administrations</span><input type="text" disabled /><br />
-			<span>Adrenaline Administrations</span><input type="text" disabled /><br />
+			<span>Amiodarone Administrations</span><input type="text" id='amioA' disabled /><br />
+			<span>Adrenaline Administrations</span><input type="text" id='adreA' disabled /><br />
 		</div>
       
-      
-		<div id="left">
-          What ist the rhythm of the patient (check the ECG)?
-        <p>  
-		<button id="vt">Pulseless VT</button><br />
+		<div id='rhythmStates' class="left">
+			<button id="vt">Pulseless VT</button><br />
 			<button id="vf">Ventricular Fibrillation</button><br />
 			<button id="pea">PEA</button><br />
 			<button id="asys">Asystole</button><br />
 			<button id="rosc">ROSC</button>
 		</div>
-		<div id="left">
-			<textarea id="info"></textarea>
+      
+		<div class="left">
+			<div id="info">
+              <p style="margin-left:10px;margin-top:10px">Press the buttons to the left</p>
+			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
