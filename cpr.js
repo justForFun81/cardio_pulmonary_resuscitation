@@ -104,15 +104,6 @@ Patient.prototype.defibAdult = function () {
 	}
 };
 
-// FUNCTION FOR CARDIOVERSION ==THIS IS NOT NEEDED BUT I LEFT IT ANYWAY====++++++++++
-Patient.prototype.cardiovertAdult = function () {
-	console.log("PREP THE PATIENT : use self-sticking pads a-p and administer anesthesia");
-	console.log("Load to 200J and SYNCHRONIZE!!");
-	//wait 10 secondsâ€¦.
-	console.log("Cardiovert using 200J.");
-	//flash screen red and green
-	this.incrementShock();
-};
 
 // FUNCTION FOR REANIMATION ================================
 Patient.prototype.reanimateAdult = function () {
@@ -121,9 +112,9 @@ Patient.prototype.reanimateAdult = function () {
 		this.incrementAdrenaline();
 		console.log ("PERFORM CPR for 2 MINUTES");
 		//flash screen red and green 100BPM && COUNT DOWN 2 MINUTES...
-		console.log('REMEMBER : 100BPM');
-		console.log('REMEMBER : 1/3 THORAX COMPRESSION');
-		console.log('REMEMBER : 30:2 if youre doing BLS');
+		console.log('REMEMBER : 100 per minute');
+		console.log('REMEMBER : chest compression 4-5 centimeters deep');
+		console.log('REMEMBER : 30 chest compressions, then 2 rescue breaths');
 		console.log('===========================================================');
 		//MAKE A COUNTDOWN 2 MINUTES AND A METRONOME....
 		this.incrementReaCycles();
@@ -133,9 +124,9 @@ Patient.prototype.reanimateAdult = function () {
 	} else {
 		console.log("PERFORM CPR for 2 MINUTES");
 		//flash screen red and green 100BPM && COUNT DOWN 2 MINUTES...
-		console.log('REMEMBER : 100BPM');
-		console.log('REMEMBER : 1/3 THORAX COMPRESSION');
-		console.log('REMEMBER : 30:2 if youre doing BLS');
+		console.log('REMEMBER : 100 per minute');
+		console.log('REMEMBER : chest compression 4-5 centimeters deep');
+		console.log('REMEMBER : 30 chest compressions, then 2 rescue breaths');
 		console.log('===========================================================');
 		this.incrementReaCycles();
 	}
