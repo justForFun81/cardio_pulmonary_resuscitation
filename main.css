@@ -1,35 +1,132 @@
 * { margin: 0; padding: 0; }
+
+@keyframes blink {
+    50% { background: #000000; },    
+    100% { background: #FFC473; }
+}
+
+
 #wrapper {
+    background-color: #FF9D73;
 	margin: 0 auto;
 	padding: 20px;
-	border: 2px solid #AAA;
-	width: 800px;
+	border: 3px solid #333;
+	width: 900px;
 }
-#left {
+
+
+
+.blink{
+  animation: blink 5s;
+  -webkit-animation: blink 10s; /* Safari and Chrome */
+}
+
+#status{
+  border: 1.5px solid;
+  background-color: #FFC473;
+}
+
+#rhythmStates{
+  border: 1.5px solid;
+  background-color: #F26D93;
+}
+#vf{
+  height: 50px;
+}
+#info{
+  margin-top: -10px;
+  border:1.5px solid;
+  height: 250px;
+  width: 320px;
+  overflow: scroll;
+  background-color: white;
+  float:right;
+  
+}
+.left {
 	margin-right: 30px;
 	float: left;
+    padding: 10px;
 }
 .clear {
 	clear: both;
 }
-h1 { margin-bottom: 10px; border-bottom: 1px solid #000; }
+h1 { margin-bottom: 10px; border-bottom: 2px solid #000; }
 span {
 	margin-bottom: 10px;
 	width: 200px;
 	display: inline-block;
-}
-textarea {
-	width: 300px;
-	height: 250px;
-	resize: none;
+    float:left;
 }
 input[type] {
 	width: 50px;
 	height: 30px;
+    margin-left: 20px;
+  float:right;
 }
 button {
 	margin-bottom: 10px;
 	border: 1px solid #000;
 	width: 150px;
 	height: 30px;
+}
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fill {
+  0%        { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes mask {
+  0%        { opacity: 1; }
+  50%, 100% { left: 0%; opacity: 0; }
+}
+
+#clock {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  background: #FF9D73;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.pie {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #952243;
+}
+
+.spinner {
+  transform-origin: right;
+  border-radius: 125px 0 0 125px;
+  z-index: 200;
+  border-right: none;
+  position: absolute;
+  animation: rotate 10s linear;
+}
+
+.filler {
+  border-radius: 0 125px 125px 0;
+  z-index: 100;
+  border-left: none;
+  animation: fill 10s steps(1, end);
+  left: 50%;
+  opacity: 0;
+}
+
+.mask {
+  width: 50%;
+  left:2%;
+  height: 100%;
+  position: relative;
+  z-index: 300;
+  opacity: 1;
+  background: inherit;
+  animation: mask 10s steps(1, end);
 }
