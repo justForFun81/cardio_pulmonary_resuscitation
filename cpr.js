@@ -31,17 +31,19 @@ this.incrementAdrenaline = function(){ this.setAdrenaline (1); };
 
 Patient.prototype.getRhythm = function () {
 	
-	/*var rhythm = prompt('What is the current rhythm of the patient:: is it	pulseless VT (enter: VT), ventricular fibrillation (enter: VF) , pulseless electrical activity (enter PEA), asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
+	/*var rhythm = prompt('What is the current rhythm of the patient:: is it: pulseless VT (enter: VT), ventricular fibrillation (enter: VF) , pulseless electrical activity (enter PEA), asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
 	USE THIS FOR DEBUGGING ONLY. The finished version will include this prompt in the HTML file 
 	*/
 	
 	switch (rhythm) {
-		case 'VT' || 'VF':
+		case 'VT':
+		case 'VF':
 			this.defibAdult();
 			this.getRhythm();
 			break;
 
-		case 'PEA' || 'ASYS':
+		case 'PEA':
+		case 'ASYS':
 			this.reanimateAdult();
 			this.getRhythm();
 			break;
@@ -62,29 +64,29 @@ Patient.prototype.getRhythm = function () {
 
 Patient.prototype.defibAdult = function () {
 	if (this.getShock () === 0){
-		console.log("Load to 200J. KEEP DOING CPR TO MINIMIZE NO-FLOW!!");
+		console.log("Load to 200J. KEEP DOING CPR TO MINIMIZE NO-FLOW TIME!!");
 		//wait 10 secondsâ€¦.
 		console.log("Administer shock of 200J. STOP CPR ONLY BRIEFLY");
 		//flash screen red and green
-		console.log("IMMEDITALY CONTINUE CPR for 2 MINUTES");
+		console.log("IMMEDIATELY CONTINUE CPR for 2 MINUTES");
 		console.log('===========================================================');
 		this.incrementShock();
 		//start counter for 2 Minutes, counting down?
 	}
 
 	else if (this.getShock() === 1){
-		console.log("Load to 300J. KEEP DOING CPR TO MINIMIZE NO-FLOW!!");
+		console.log("Load to 300J. KEEP DOING CPR TO MINIMIZE NO-FLOW TIME!!");
 		console.log("Administer shock of 300J. STOP CPR ONLY BRIEFLY");
-		console.log("IMMEDITALY CONTINUE CPR for 2 MINUTES");
+		console.log("IMMEDIATELY CONTINUE CPR for 2 MINUTES");
 		console.log('===========================================================');
 		this.incrementShock();
 
 	}
 
 	else if (this.getShock() === 2){
-		console.log("Load to 360J. KEEP DOING CPR TO MINIMIZE NO-FLOW!!");
+		console.log("Load to 360J. KEEP DOING CPR TO MINIMIZE NO-FLOW TIME!!");
 		console.log("Administer shock of 360J. STOP CPR ONLY BRIEFLY");
-		console.log("IMMEDITALY CONTINUE CPR for 2 MINUTES");
+		console.log("IMMEDIATELY CONTINUE CPR for 2 MINUTES");
 		console.log('===========================================================');
 		this.incrementShock();
 
@@ -94,7 +96,7 @@ Patient.prototype.defibAdult = function () {
 	else {
 		console.log("Load to 360J. KEEP DOING CPR TO MINIMIZE NO-FLOW!!");
 		console.log("Administer shock of 360J. STOP CPR ONLY BRIEFLY");
-		console.log("IMMEDITALY CONTINUE CPR for 2 MINUTES");
+		console.log("IMMEDIATELY CONTINUE CPR for 2 MINUTES");
 		console.log('===========================================================');
 		this.incrementShock();
 		this.incrementAmiodarone();
@@ -102,7 +104,7 @@ Patient.prototype.defibAdult = function () {
 	}
 };
 
-// FUNCTION FOR CARDIOVERSION ==THIS IS NOT NEEDED=================++++++++++
+// FUNCTION FOR CARDIOVERSION ==THIS IS NOT NEEDED BUT I LEFT IT ANYWAY====++++++++++
 Patient.prototype.cardiovertAdult = function () {
 	console.log("PREP THE PATIENT : use self-sticking pads a-p and administer anesthesia");
 	console.log("Load to 200J and SYNCHRONIZE!!");
@@ -121,7 +123,7 @@ Patient.prototype.reanimateAdult = function () {
 		//flash screen red and green 100BPM && COUNT DOWN 2 MINUTES...
 		console.log('REMEMBER : 100BPM');
 		console.log('REMEMBER : 1/3 THORAX COMPRESSION');
-		console.log('REMEMBER : 30:2 if youâ€™re doing BLS');
+		console.log('REMEMBER : 30:2 if youre doing BLS');
 		console.log('===========================================================');
 		//MAKE A COUNTDOWN 2 MINUTES AND A METRONOME....
 		this.incrementReaCycles();
@@ -133,7 +135,7 @@ Patient.prototype.reanimateAdult = function () {
 		//flash screen red and green 100BPM && COUNT DOWN 2 MINUTES...
 		console.log('REMEMBER : 100BPM');
 		console.log('REMEMBER : 1/3 THORAX COMPRESSION');
-		console.log('REMEMBER : 30:2 if youâ€™re doing BLS');
+		console.log('REMEMBER : 30:2 if youre doing BLS');
 		console.log('===========================================================');
 		this.incrementReaCycles();
 	}
