@@ -31,16 +31,17 @@ this.incrementAdrenaline = function(){ this.setAdrenaline (1); };
 
 Patient.prototype.getRhythm = function () {
 	
-	var rhythm = prompt('What is the current rhythm of the patient:: is it	pulseless VT (enter: VT), ventricular fibrillation (enter: VF) , pulseless electrical activity (enter PEA), asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
-	
+	/*var rhythm = prompt('What is the current rhythm of the patient:: is it	pulseless VT (enter: VT), ventricular fibrillation (enter: VF) , pulseless electrical activity (enter PEA), asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
+	USE THIS FOR DEBUGGING ONLY. The finished version will include this prompt in the HTML file 
+	*/
 	
 	switch (rhythm) {
-		case 'VT' || 'VF’:
+		case 'VT' || 'VF':
 			this.defibAdult();
 			this.getRhythm();
 			break;
 
-		case 'PEA' || 'ASYS’:
+		case 'PEA' || 'ASYS':
 			this.reanimateAdult();
 			this.getRhythm();
 			break;
