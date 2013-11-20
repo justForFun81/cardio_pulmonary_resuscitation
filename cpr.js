@@ -30,7 +30,10 @@ this.incrementAdrenaline = function(){ this.setAdrenaline (1); };
 // ============= CLASS METHOD FOR RHYTHM ANALYSIS===========
 
 Patient.prototype.getRhythm = function () {
-	var rhythm = prompt('What is the current rhythm of the patient:: is it	pulseless VT (enter: VT), ventricular Fibrillation (enter: VF) , PEA (enter PEA) or Asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
+	
+	var rhythm = prompt('What is the current rhythm of the patient:: is it	pulseless VT (enter: VT), ventricular fibrillation (enter: VF) , pulseless electrical activity (enter PEA), asystole (enter ASYS) or ROSC (enter ROSC)?').toUpperCase();
+	
+	
 	switch (rhythm) {
 		case 'VT' || 'VF’:
 			this.defibAdult();
