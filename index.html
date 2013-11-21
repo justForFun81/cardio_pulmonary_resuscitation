@@ -2,24 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="uft-8" />
-	<title>CPR</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="cpr.js"></script>
+	<title>Cardio Pulmonary Resuscitation</title>
 </head>
+    
+    
 <body>
 	<div id="wrapper">
-		<h1>CPR</h1>
-       <div id="clock">
+		<h1>Cardio Pulmonary Resuscitation</h1>
+      <p style="margin-bottom:10px">according to European Resuscitation Guidelines 2010</p>
+       <div id="ecg" class = "left"><p>space for the ECG
+         <p>will show a random ecg every 2 minutes</p>
+         <p>checks to see if your choice was correct</p>
+        </div>
+    
+       <div id="clock" class = "right"><p>space for the CLOCK
+         <p>counts up 2 minutes</p>
+         <p>keeps system time</p>
+           
           <div id="x"></div>
           <div id="y"></div>
           <div id="z"></div>
         </div>
-		<div id='status' class="left">
-			<span>Reanimation Cycles</span><input type="text" disabled="" /><br />
-			<span>Shock</span><input type="text" disabled /><br />
-			<span>Amiodarone Administrations</span><input type="text" id='amioA' disabled /><br />
-			<span>Adrenaline Administrations</span><input type="text" id='adreA' disabled /><br />
-		</div>
-      
+		
 		<div id='rhythmStates' class="left">
+          <h3>Assess the patient's rhythm</h3>
+            <p>
 			<button id="vt">Pulseless VT</button><br />
 			<button id="vf">Ventricular Fibrillation</button><br />
 			<button id="pea">PEA</button><br />
@@ -29,10 +38,22 @@
       
 		<div class="left">
 			<div id="info">
-              <p style="margin-left:10px;margin-top:10px">Press the buttons to the left</p>
+              <p style="margin-left:20px;margin-top:10px">Press the buttons to the left, current actions will show here...</p>
 			</div>
 		</div>
+      
+
+        
+      <div id='status' class="left">
+        <h3>CPR Log: </h3><p>
+			<span>Cycles of BLS</span><input type="text" disabled="" /><br />
+			<span>Shocks</span><input type="text" disabled /><br />
+			<span>Amiodarone Administrations</span><input type="text" id='amioA' disabled /><br />
+			<span>Adrenaline Administrations</span><input type="text" id='adreA' disabled /><br />
+		</div>
+      
 		<div class="clear"></div>
 	</div>
+    <div id="authorship"> copyright A. Wakileh, hunter_d, Aden Fission, and James Larson 2013</div>
 </body>
 </html>
