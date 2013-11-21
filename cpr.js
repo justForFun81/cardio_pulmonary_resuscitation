@@ -59,30 +59,30 @@ Patient.prototype.getRhythm = function (rhythm) {
 Patient.prototype.defibAdult = function () {
   switch(this.getShock()){
     case 0:
-        log ("Load to 200J. KEEP DOING CPR TO MINIMIZE NO-FLOW!", true);
+        log ("Loading defibrillator to 200J. Keep performing chest compressions to minimise no-flow time!", true);
 		//wait 10 seconds….	
         clockToggle(10000);
-        log("Administer shock of 200J. STOP CPR ONLY BRIEFLY. IMMEDIATELY CONTINUE CPR for 2 MINUTES.", false, 10000);
+        log("Administering 200J shock. Stop chest compression only briefly. Immediately continue chest compressions for 2 minutes.", false, 10000);
         //start counter for 2 Minutes, counting down?
         break;
     case 1:
-        log ("Load to 300J. KEEP DOING CPR TO MINIMIZE NO-FLOW!", true);
+        log ("Loading defibrillator to 300J. Keep performing chest compressions to minimise no-flow time!", true);
         clockToggle(10000);
-        log("Administer shock of 300J. STOP CPR ONLY BRIEFLY. IMMEDIATELY CONTINUE CPR for 2 MINUTES.", false, 10000);
+        log("Administering 300J shock. Stop chest compression only briefly. Immediately continue chest compressions for 2 minutes.", false, 10000);
         break;
       
     case 2:
-        log ("Load to 360J. KEEP DOING CPR TO MINIMIZE NO-FLOW!", true);
+        log ("Loading defibrillator to 360J. Keep performing chest compressions to minimise no-flow time!", true);
         clockToggle(10000);
-        log("Administer shock of 360J. STOP CPR ONLY BRIEFLY. IMMEDIATELY CONTINUE CPR for 2 MINUTES.", false, 10000);
+        log("Administering 360J shock. Stop chest compression only briefly. Immediately continue chest compressions for 2 minutes.", false, 10000);
         break;
       
       
     default:
         //FIGURE OUT A WAY TO WORK IN THE AMIODARONE
-        log ("Load to 360J. KEEP DOING CPR TO MINIMIZE NO-FLOW!", true);
-		log ("Administer shock of 360J. STOP CPR ONLY BRIEFLY");
-		log ("IMMEDIATELY CONTINUE CPR for 2 MINUTES.");
+        log ("Loading defibrillator to 360J. Keep performing chest compressions to minimise no-flow time!", true);
+		log ("Administering 360J shock. Stop chest compression only briefly. ");
+		log ("Immediately continue chest compressions for 2 minutes.");
 		this.incrementAmiodarone();
   }
   
@@ -90,7 +90,6 @@ Patient.prototype.defibAdult = function () {
   setTimeout(function(){blinkToggle('status');},10000);
   this.incrementShock();
 };
-
 
 
 // FUNCTION FOR REANIMATION ================================
@@ -124,7 +123,6 @@ Patient.prototype.reanimateAdult = function () {
 function gid(id){
     return document.getElementById(id);
 }
-
 function butts(){
   gid('vt').disabled = !gid('vt').disabled; 
   gid('vf').disabled = !gid('vf').disabled; 
@@ -132,8 +130,6 @@ function butts(){
   gid('pea').disabled = !gid('pea').disabled; 
   gid('rosc').disabled = !gid('rosc').disabled; 
 }
-
-
 function log(message, overwrite, delay){
     // Write a message within the 'info' div.
     // Note: If you provide a truthy overwrite parameter,
